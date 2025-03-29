@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyber Saguaros Calendar</title>
 
-  <!-- Bootstrap CSS and custom site styles -->
-  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="/scss/style.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700">
+  <!-- Bootstrap & site styles -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="/scss/style.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" />
 
   <!-- FullCalendar CSS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
@@ -20,11 +19,17 @@
       color: #cdd6f4;
       font-family: 'Josefin Sans', sans-serif;
     }
+
+    header.navigation {
+      background-color: #1e1e2e;
+    }
+
     h1 {
       color: #cba6f7;
       text-align: center;
       margin-bottom: 2rem;
     }
+
     #calendar {
       max-width: 1000px;
       margin: 0 auto;
@@ -33,41 +38,59 @@
       border-radius: 16px;
       box-shadow: 0 0 25px #cba6f7a0;
     }
+
     .fc-scrollgrid,
     .fc-daygrid-day,
-    .fc-daygrid-day-frame {
+    .fc-daygrid-day-frame,
+    .fc-theme-standard td,
+    .fc-theme-standard th {
       background-color: #181825 !important;
+      border-color: #313244 !important;
     }
+
     .fc-toolbar-title {
       color: #cdd6f4 !important;
     }
+
     .fc-daygrid-event {
       background-color: #cba6f7;
       border: none;
       color: #1e1e2e;
     }
+
+    .fc-daygrid-day-number {
+      color: #cdd6f4 !important;
+    }
+
+    footer.footer {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  
-<header class="navigation" style="background-color: #1e1e2e;">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="/">
-        <img src="/images/logo.png" alt="Cyber Saguaros" style="max-height: 40px;">
-      </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="/calendar/">Calendar</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</header>
 
+  <!-- Navbar -->
+  <header class="navigation">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.png" alt="Cyber Saguaros" style="max-height: 40px;">
+        </a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/calendar/">Calendar</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Calendar -->
   <section class="section text-center" style="padding: 2rem 1rem;">
     <div class="container">
       <h1>📅 Cyber Saguaros Club Calendar</h1>
@@ -75,19 +98,19 @@
     </div>
   </section>
 
-  
-<footer class="footer" style="background-color: #1e1e2e; color: #cdd6f4; padding: 2rem 1rem; text-align: center;">
-  <div class="container">
-    <p>&copy; 2025 Cyber Saguaros. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cyber Saguaros. All rights reserved.</p>
+    </div>
+  </footer>
 
-
-  <!-- FullCalendar and required JS -->
+  <!-- FullCalendar Script -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
+
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         height: 'auto',
@@ -102,6 +125,7 @@
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         }
       });
+
       calendar.render();
     });
   </script>
