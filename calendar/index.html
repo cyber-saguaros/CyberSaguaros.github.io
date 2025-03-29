@@ -5,13 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyber Saguaros Calendar</title>
-  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+
+  <!-- Bootstrap CSS and custom site styles -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/scss/style.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
   <style>
     body {
       background-color: #1e1e2e;
       color: #cdd6f4;
       font-family: 'Josefin Sans', sans-serif;
-      padding: 2rem;
+      padding-top: 100px;
     }
     h1 {
       color: #cba6f7;
@@ -26,6 +34,11 @@
       border-radius: 16px;
       box-shadow: 0 0 25px #cba6f7a0;
     }
+    .fc-scrollgrid,
+    .fc-daygrid-day,
+    .fc-daygrid-day-frame {
+      background-color: #181825 !important;
+    }
     .fc-toolbar-title {
       color: #cdd6f4 !important;
     }
@@ -34,17 +47,10 @@
       border: none;
       color: #1e1e2e;
     }
-  
-    .fc-scrollgrid,
-    .fc-daygrid-day,
-    .fc-daygrid-day-frame {
-      background-color: #181825 !important;
-    }
-    </style>
-    
+  </style>
 </head>
 <body>
-
+  
 <header class="navigation" style="background-color: #1e1e2e;">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -62,9 +68,24 @@
   </div>
 </header>
 
-  <h1>📅 Cyber Saguaros Club Calendar</h1>
-  <div id="calendar"></div>
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+
+  <section class="section text-center" style="padding: 2rem 1rem;">
+    <div class="container">
+      <h1>📅 Cyber Saguaros Club Calendar</h1>
+      <div id="calendar"></div>
+    </div>
+  </section>
+
+  
+<footer class="footer" style="background-color: #1e1e2e; color: #cdd6f4; padding: 2rem 1rem; text-align: center;">
+  <div class="container">
+    <p>&copy; 2025 Cyber Saguaros. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <!-- FullCalendar and required JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const calendarEl = document.getElementById('calendar');
@@ -85,12 +106,5 @@
       calendar.render();
     });
   </script>
-
-<footer class="footer" style="background-color: #1e1e2e; color: #cdd6f4; padding: 2rem 1rem; text-align: center;">
-  <div class="container">
-    <p>&copy; 2025 Cyber Saguaros. All rights reserved.</p>
-  </div>
-</footer>
-
 </body>
 </html>
